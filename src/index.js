@@ -17,7 +17,7 @@ searchBtn.addEventListener('click', getMovies)
 
 function getMovies(e) {
     e.preventDefault()
-    fetch(`http://www.omdbapi.com/?apikey=b5227d92&s=${searchTerm.value}`)
+    fetch(`https://www.omdbapi.com/?apikey=b5227d92&s=${searchTerm.value}`)
         .then(res => res.json())
         .then(data => {
             if (data.Response === "False") {
@@ -34,7 +34,7 @@ function getMovies(e) {
 
 function getMoviesDetail(movies) {
     for (const movie of movies) {
-        fetch(`http://www.omdbapi.com/?apikey=b5227d92&t=${movie.Title}`)
+        fetch(`https://www.omdbapi.com/?apikey=b5227d92&t=${movie.Title}`)
             .then(res => res.json())
             .then(data => {
                 movieList.push(data)
